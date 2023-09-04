@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fresh Kicks POS</title>
+
+        <!--Fonts Stylesheet-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <!--Font Awsome CDN-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!--Custom Stylesheet-->
+        <link rel="stylesheet" href="./assetts/style.css">
+    </head>
+    <body>
+        
+        <!--main section consist of shopping cart and product listing-->
+        <section class="main">
+
+            <h1 class="title">Aram's Kicks Stand</h1>
+
+            <h3 class="subheading">Products Listing</h3>
+            <section id="productListings" class="product-listings">
+
+                <!-- cards injected by javascript -->
+            
+            </section>
+
+            <div class="flex">
+                <h3 class="subheading">Your Shopping Cart</h3>
+                <!--delete all item in cart-->
+                <i class="fa-solid fa-trash" onclick="removeAllItems()"></i>
+            </div>
+
+            <section id="shoppingCart" class="shopping-cart">
+
+                <!-- cards injected by javascript when cart has at least one item -->
+
+            </section>
+        </section>
+
+        <!--check out session-->
+
+        <section class="checkout-section">
+
+            <h2 class="checkout">Checkout</h2>
+
+            <p class="cart-total" id="cartTotal">Cart Total: $</p>
+
+            <label for="cashInput" class="label">Enter Cash Received: $</label><br>
+
+            <div class="checkout-div">
+                <input type="text" id="cashInput" class="cashInput">
+
+                <button class="cashSubmit" id="cashSubmit">Submit</button>
+            </div>
+
+            <h3 class="heading">Receipt</h3>
+
+            <p id="cash" class="cash">Cash Received: $</p>
+
+            <p id="remainingBalance" class="remaining-balance">Balance: $</p>
+
+            <p class="message">Thank You! </p>
+
+            <button class="card-select" id="useCard"> Pay With Card</button>
+
+        </section>
+
+        <!--Credit Card Modal-->
+        <div class="popup" id="popup">
+            <h3>Enter card details</h3>
+
+            <p class="cart-total" id="cartTotal1">Customer's Total: $</p>
+
+            <input type="text" placeholder="Enter the customer's name" id="name" required>
+            <input type="text" placeholder="Enter the customer's card number" min="15" max="16" id="cardNumber" required>
+            <input type="text" placeholder="Enter the customer's cvv" min="3" max="4" id="cvv" required>
+            <button type="submit" class="btn1" id="close">Pay</button>
+        </div>
+        <!--Overlay to darken background when modal pops up-->
+        <div id="overlay"></div>
+
+        <!--Custom Message Feature-->
+        <div class="alert show">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg"><!--message is injected by JS custom feature methods--></span>
+            <span class="close-btn">
+                <span class="fas fa-times"></span>
+            </span>
+        </div>
+
+        <script src="./assetts/script.js"></script>
+    </body>
+</html>
